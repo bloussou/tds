@@ -27,7 +27,7 @@ class AudioManager {
             trace("Unknown sound: " + name);
             return;
         }
-        sounds[name].play();
+        // sounds[name].play();
     }
 
     static public function playMusic(name) {

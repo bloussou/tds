@@ -59,6 +59,7 @@ class QuestionSystem extends ListIteratingSystem<QuestionNode> {
                 if(e.get(Shake) == null) {
                     e.add(new Shake());
                     if(e.get(BitmapText) == null) {
+                        // TODO COUNT
                         b.animations.play("block");
                         e.add(e.get(QuestionBlock).bt);
                         AudioManager.playSound("coin");
