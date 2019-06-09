@@ -1465,42 +1465,27 @@ var url = window.location.href;
     }
   };
   game_AudioManager.playSound = function(name) {
-    var _this = game_AudioManager.sounds;
-    if (
-      !(__map_reserved[name] != null
-        ? _this.existsReserved(name)
-        : _this.h.hasOwnProperty(name))
-    ) {
-      console.log("Unknown sound: " + name);
-      return;
-    }
-    var _this1 = game_AudioManager.sounds;
-    (__map_reserved[name] != null
-      ? _this1.getReserved(name)
-      : _this1.h[name]
-    ).play();
+	var _this = game_AudioManager.sounds;
+	if(!(__map_reserved[name] != null ? _this.existsReserved(name) : _this.h.hasOwnProperty(name))) {
+		console.log("Unknown sound: " + name);
+		return;
+	}
+	var _this1 = game_AudioManager.sounds;
+	(__map_reserved[name] != null ? _this1.getReserved(name) : _this1.h[name]).play();
   };
   game_AudioManager.playMusic = function(name) {
-    var _this = game_AudioManager.sounds;
-    if (
-      (__map_reserved[name] != null
-        ? _this.getReserved(name)
-        : _this.h[name]) == game_AudioManager.music
-    ) {
-      return;
-    }
-    if (game_AudioManager.music != null) {
-      game_AudioManager.music.stop();
-    }
-    var _this1 = game_AudioManager.sounds;
-    (__map_reserved[name] != null
-      ? _this1.getReserved(name)
-      : _this1.h[name]
-    ).play("", 0, 0.5, true);
-    var _this2 = game_AudioManager.sounds;
-    game_AudioManager.music =
-      __map_reserved[name] != null ? _this2.getReserved(name) : _this2.h[name];
-  };
+	  var _this = game_AudioManager.sounds;
+	  if((__map_reserved[name] != null ? _this.getReserved(name) : _this.h[name]) == game_AudioManager.music) {
+		  return;
+  		}
+		if(game_AudioManager.music != null) {
+			game_AudioManager.music.stop();
+		}
+		var _this1 = game_AudioManager.sounds;
+		(__map_reserved[name] != null ? _this1.getReserved(name) : _this1.h[name]).play("",0,0.5,true);
+		var _this2 = game_AudioManager.sounds;
+		game_AudioManager.music = __map_reserved[name] != null ? _this2.getReserved(name) : _this2.h[name];
+	};
   var game_Block = function() {};
   game_Block.__name__ = ["game", "Block"];
   game_Block.prototype = {
@@ -1904,7 +1889,7 @@ var url = window.location.href;
       this.engine.addSystem(new game_QuestionSystem(), 1);
       this.engine.addSystem(new game_ShakeSystem(), 1);
       this.engine.addSystem(new game_ControlSystem(), 2);
-      game_AudioManager.playMusic("o/verworld");
+      game_AudioManager.playMusic("overworld");
       $global.resizeCanvas();
     },
     update: function() {
