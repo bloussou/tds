@@ -14,6 +14,7 @@
       body {
         margin: 0;
         height: 100%;
+        width: auto;
         overflow: hidden;
       }
 
@@ -34,6 +35,8 @@
         image-rendering: crisp-edges;
         image-rendering: pixelated;
         -ms-interpolation-mode: nearest-neighbor;
+        display : block;   
+        margin : auto;
       }
 
       .root > div {
@@ -59,8 +62,8 @@
           return;
         }
 
-        var rw = 320;
-        var rh = 240;
+        var rw = window.innerWidth;
+        var rh = window.innerHeight;
 
         var wh = window.innerHeight;
         var ww = window.innerWidth;
